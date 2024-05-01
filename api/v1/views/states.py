@@ -8,6 +8,9 @@ from datetime import datetime
 import uuid
 
 
+app = Flask(__name__)
+
+
 @app_views.route('/states/', methods=['GET'])
 def list_states():
     '''Retrieves a list of all State objects'''

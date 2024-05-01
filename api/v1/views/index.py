@@ -2,14 +2,20 @@
 '''API status'''
 
 from flask import Flask, jsonify
+from models.base_model import BaseModel
 from api.v1.views import app_views
 from models import storage
+
+
+app = Flask(__name__)
+
 
 @app_views.route('/status')
 def api_status():
     '''Return API status'''
     response = {'status': 'OK'}
     return jsonify(response)
+
 
 @app_views.route('/stats')
 def api_stats():
